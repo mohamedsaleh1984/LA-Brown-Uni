@@ -296,3 +296,14 @@ def nextInts():
     output = [x+1 for x in L]
     print(output)
 
+"""
+Task 27: Define a one-line procedure cubes(L) specifed as follows:
+- input: list L of numbers
+- output: list of numbers whose ith element is the cube of the ith element of L
+- example: input [1; 2; 3], output [1; 8; 27].
+"""
+def cubes():
+    L = [1, 2, 3]
+    output = [x**3 for x in L]
+    print(output)
+

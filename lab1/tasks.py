@@ -240,4 +240,13 @@ def dic_ranges_comprehensions():
     res = [{x:x**2} for x in list(range(100))]
     print(res)
 
-dic_ranges_comprehensions()
+"""
+Task 23: Assign to the variable D the set { red , white , blue }. 
+Now write a comprehension that evaluates to a dictionary that represents the identity function on D.
+"""
+def D_variable():
+    D = { 'red' , 'white' , 'blue' }
+    iden_dic = {d: d for d in D}
+    print(iden_dic)
+
+D_variable()

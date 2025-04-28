@@ -1,0 +1,50 @@
+"""
+Sets
+"""
+s = {1,23,4,5,6,7,6}
+print('no duplication ',s)
+
+s2 = {'a',12.32,68,'A','a',1}
+print('generic types and sorted',s2)
+
+
+print('set length ' , len(s2))
+
+print(4 in s)
+
+print(sum(s))
+
+### mutate list
+s.add(2)
+s.remove(23)
+print(sum(s))
+
+### union
+print(s | s2)
+### intersection
+print(s & s2)
+
+## comprehensions
+print('before ', s)
+v = {2*x for x in s}
+print('after ', v)
+
+"""
+By adding the phrase if hconditioni at the end of the comprehension (before the closing brace \g"), you
+can skip some of the values in the set being iterated over:
+"""
+o = {x*x for x in {1,2,3,96,7,7} | {5, 7} if x > 2}
+##print(o)
+
+### You can write a comprehension that iterates over the Cartesian product of two sets:
+t = {x*y for x in {1,2,3} for y in {2,3,4}}
+## print(t)
+
+
+
+L = [0,10,20,30,40,50,60,70,80,90]
+print(L[:5])
+print(L[5:])
+
+
+

@@ -307,3 +307,19 @@ def cubes():
     output = [x**3 for x in L]
     print(output)
 
+"""
+Task 28: Define a one-line procedure dict2list(dct,keylist) with this spec:
+- input: dictionary dct, list keylist consisting of the keys of dct
+- output: list L such that L[i] = dct[keylist[i]] for i = 0; 1; 2; : : : ; len(keylist) 􀀀 1
+- example: input dct={a:A, b:B, c:C} 
+and keylist=[b,c,a],
+output [B, C, A]
+"""
+def dict2list():
+    dct={'a':'A', 'b':'B', 'c':'C'} 
+    keylist=['b','c','a']
+    output = [dct[k] for k in keylist]
+    print(output)
+
+
+dict2list()

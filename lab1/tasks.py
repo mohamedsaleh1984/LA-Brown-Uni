@@ -322,4 +322,18 @@ def dict2list():
     print(output)
 
 
-dict2list()
+"""
+Task 29: Define a one-line procedure list2dict(L, keylist) specified as follows:
+- input: list L, list keylist of immutable items
+- output: dictionary that maps keylist[i] to L[i] for i = 0; 1; 2; : : : ; len(L) 􀀀 1
+- example: input L=['A','B','C'] and keylist=['a','b','c'],
+output {a:A, b:B, c:C}
+Hint: Use a comprehension that iterates over a zip or a range.
+"""
+def list2dict2():
+    L=['A','B','C']
+    keylist=['a','b','c']
+    output = {a:A for (a,A) in zip(keylist,L)}
+    print(output)
+    
+list2dict2()

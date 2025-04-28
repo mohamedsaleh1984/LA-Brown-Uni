@@ -266,8 +266,6 @@ If base = 2 then digits should be the set f0,1g, and the comprehension should ev
 
 """
 def digitSystemMapper():
-    base = 2
-    digits = {0,1}
     res = {num:((num>>2) & 1,(num>>1) & 1,num&1) for num in range(8)}
     print(res)
 

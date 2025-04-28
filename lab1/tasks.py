@@ -232,4 +232,12 @@ def using_dic_Comprehensions2():
     value = [x[k] if k in x else 'NOT PRESENT ' for x in dlist]
     print(value)
 
-using_dic_Comprehensions2()
+"""
+Task 22: Using range, write a comprehension whose value is a dictionary. The keys should be the integers
+from 0 to 99 and the value corresponding to a key should be the square of the key.
+"""
+def dic_ranges_comprehensions():
+    res = [{x:x**2} for x in list(range(100))]
+    print(res)
+
+dic_ranges_comprehensions()

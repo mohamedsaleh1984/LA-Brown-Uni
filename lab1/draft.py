@@ -62,3 +62,6 @@ print(c)
 
 dic = {2+1:'thr'+'ee', 2*2:'fo'+'ur'}
 print(dic)
+
+hola = { k:v for (k,v) in [(3,2),(4,0),(100,1)] }
+print(hola)

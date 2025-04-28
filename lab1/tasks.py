@@ -269,4 +269,20 @@ def digitSystemMapper():
     res = {num:((num>>2) & 1,(num>>1) & 1,num&1) for num in range(8)}
     print(res)
 
-digitSystemMapper()
+"""
+Task 25: Suppose id2salary is a dictionary that maps some employee IDs (a subset of the integers from
+0 to n􀀀1) to salaries. Suppose L is an n-element list whose ith element is the name of employee number i.
+Your goal is to write a comprehension whose value is a dictionary mapping employee names to salaries. You
+can assume that employee names are distinct.
+Test your comprehension with the following data:
+id2salary = {0:1000.0, 3:990, 1:1200.50}
+names = ['Larry', 'Curly', , 'Moe']
+"""
+def salaryMapper():
+    id2salary = {0:1000.0, 3:990, 1:1200.50}
+    names = ['Larry', 'Curly','' , 'Moe']
+    keys = id2salary.keys() 
+    res = { names[k]:id2salary[k]  for k in keys if names[k] != '' }
+    print(res)
+
+salaryMapper()

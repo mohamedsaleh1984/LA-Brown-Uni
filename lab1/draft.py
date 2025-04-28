@@ -65,3 +65,7 @@ print(dic)
 
 hola = { k:v for (k,v) in [(3,2),(4,0),(100,1)] }
 print(hola)
+
+
+keys = [2*x for x in {4:'a',3:'b'}.keys() ]
+print(keys)

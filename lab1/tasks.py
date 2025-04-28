@@ -249,4 +249,26 @@ def D_variable():
     iden_dic = {d: d for d in D}
     print(iden_dic)
 
-D_variable()
+
+"""
+Task 24: Our system for writing numbers uses decimal notation. For example, the digits (2; 1; 5) represent
+the number 2 * 10^2 + 1 * 10^1 + 5 * 10^0. We say for this system that the base is 10, and that the available
+digits are 0,1, 2,....., 9.
+In binary, the digits (1; 0; 1) represent the number 1*2^2 +0 *2^1 +1 * 2^0.
+
+In this case, the base is 2, and the available digits are 0; 1.
+Write a dictionary comprehension using the variables base and digits that evaluates to a dictionary
+that maps each three-digit number to the three digits that represent it. For example, if base = 10 then
+digits should be the set {0,1,2,..., 9} and the comprehension should evaluate to
+{0:(0,0,0), 1:(0,0,1), ..., 999:(9,9,9)}
+If base = 2 then digits should be the set f0,1g, and the comprehension should evaluate to
+{0:(0,0,0), 1:(0,0,1), 2:(0,1,0),3:(0,1,1), 4:(1,0,0), ...}
+
+"""
+def digitSystemMapper():
+    base = 2
+    digits = {0,1}
+    res = {num:((num>>2) & 1,(num>>1) & 1,num&1) for num in range(8)}
+    print(res)
+
+digitSystemMapper()

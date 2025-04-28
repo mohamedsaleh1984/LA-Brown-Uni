@@ -152,7 +152,84 @@ such tuple.
 """
 def comprehensive_tuple3():
     s = { -4,-2, 1, 2, 5, 0}
-    tuples = [(i,j,k) for i in s for j in s for k in s if (i+j+k == 0 ) ]
-    
+    ## No work around this one unless we use ranges.
+    _tuples = [(i,j,k) for i in s for j in s for k in s if (i+j+k == 0 ) ]
+    tuples = [_tuples[0]]
     print(tuples)
 
+
+"""
+Task 16: Find an example of a list L such that len(L) and len(list(set(L))) are different.
+"""
+def example():
+    List = [1,1,2,3,4,5]
+    print(len(List) == len(list(set(List))))
+
+"""
+Task 17: Write a comprehension over a range of the form range(n) such that the value of the compre-
+hension is the set of odd numbers from 1 to 99.
+"""
+def use_ranges():
+    my_set = {x for x in range(100) if x%2==1}
+    print(my_set)
+
+"""
+Task 18: Assign to L the list consisting of the first five letters [A,B,C,D,E]. Next, use L in an expression whose value is
+[(0, 'A'), (1, 'B'), (2, 'C'), (3, 'D'), (4, 'E')]
+Your expression should use a range and a zip, but should not use a comprehension.
+"""
+def use_zip():
+    L = ['A','B','C','D','E']
+    nums = list(range(5))
+    res = list(zip(nums, L))
+    print(res)
+    
+
+"""
+Task 19: Starting from the lists [10, 25, 40] and [1, 15, 20], write a comprehension whose value is
+the three-element list in which the first element is the sum of 10 and 1, the second is the sum of 25 and 15,
+and the third is the sum of 40 and 20. Your expression should use zip but not list.
+"""
+def list_sum():
+    L1 = [10, 25, 40]
+    L2 = [1, 15, 20]
+    res = [x+y for x,y in zip(L1,L2)]
+    print(res)
+
+"""
+Task 20: Suppose dlist is a list of dictionaries and k is a key that appears in all the dictionaries in dlist.
+Write a comprehension that evaluates to the list whose ith element is the value corresponding to key k in
+the ith dictionary in dlist.
+    Test your comprehension with some data. Here are some example data.
+dlist = [{James:Sean, director:Terence}, {James:Roger,director:Lewis}, {James:Pierce, director:Roger}]
+k = James
+
+For these data, the value corresponding to k in the first dictionary is 'Sean', the value corresponding to k
+in the second dictionary is 'Roger', and the value corresponding to k in the third dictionary is 'Pierce',
+so the comprehension should evaluate to ['Sean','Roger','Pierce'].
+"""
+def using_dic_comprehensions():
+    dlist = [{'James':'Sean', 'director':'Terence'}, {'James':'Roger','director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}]
+    k = 'James'
+    value = [x[k] for x in dlist if k in x]
+    print(value)
+
+"""
+Task 21: Modify the comprehension in Task 20 to handle the case in which k might not appear in all the
+dictionaries. The comprehension evaluates to the list whose ith element is the value corresponding to key k
+in the ith dictionary in dlist if that dictionary contains that key, and 
+NOT PRESENT otherwise. One way to solve this is to use a conditional expression. Another way is to use the .get(key, default) method of
+dictionaries. Test your comprehension with k = Bilbo and k = Frodo and with the following list of dictionaries:
+dlist = [{Bilbo:Ian,Frodo:Elijah},{Bilbo:Martin,Thorin:Richard}] 
+For example, with k = Frodo, 
+the first dictionary in the list maps 'Frodo' to 'Elijah', and the sec-ond dictionary in the list does not map 'Frodo' to anything, so the comprehension should evaluate to
+['Elijah','NOT PRESENT'].
+"""
+def using_dic_Comprehensions2():
+    dlist = [{'Bilbo':'Ian','Frodo':'Elijah'},{'Bilbo':'Martin','Thorin':'Richard'}]     
+    k = 'Frodo'
+    # perfect
+    value = [x[k] if k in x else 'NOT PRESENT ' for x in dlist]
+    print(value)
+
+using_dic_Comprehensions2()

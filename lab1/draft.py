@@ -48,3 +48,17 @@ print(L[5:])
 
 
 
+my_list = list(range(10))
+print(my_list)
+print(set(my_list))
+
+
+x = list(zip([1,3,5],[2,4,6]))
+print(x)
+
+
+c = [x*x for x in reversed([4, 5, 10])]
+print(c)
+
+dic = {2+1:'thr'+'ee', 2*2:'fo'+'ur'}
+print(dic)

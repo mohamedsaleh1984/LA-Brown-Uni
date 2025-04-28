@@ -285,4 +285,14 @@ def salaryMapper():
     res = { names[k]:id2salary[k]  for k in keys if names[k] != '' }
     print(res)
 
-salaryMapper()
+"""
+Task 26: Define a one-line procedure nextInts(L) specied as follows:
+- input: list L of integers
+- output: list of integers whose ith element is one more than the ith element of L
+- example: input [1; 5; 7], output [2; 6; 8].
+"""
+def nextInts():
+    L = [1, 5, 7]
+    output = [x+1 for x in L]
+    print(output)
+

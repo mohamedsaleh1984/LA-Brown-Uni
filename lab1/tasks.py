@@ -336,4 +336,3 @@ def list2dict2():
     output = {a:A for (a,A) in zip(keylist,L)}
     print(output)
     
-list2dict2()

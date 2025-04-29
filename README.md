@@ -1,4 +1,5 @@
-### Coding the Matrix Resources
+### Brown University
+### Coding the Matrix Linear Algebra through Computer Science Applications
 
 Lab solutions
 

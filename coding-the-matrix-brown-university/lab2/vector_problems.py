@@ -39,6 +39,25 @@ def problem3():
     res = v+u
     print(res)
 
-problem3()
+"""
+    Sum of vectors a..f is equal to u
+"""
+
+def problem4():
+    a = GF2_Vec([1,1,0,0,0,0,0])
+    b = GF2_Vec([0,0,0,1,1,0,0])
+    c = GF2_Vec([0,1,1,0,0,0,0])
+    d = GF2_Vec([0,0,0,0,1,1,0])
+    e = GF2_Vec([0,0,1,1,0,0,0])
+    f = GF2_Vec([0,0,0,0,0,1,1])
+
+    u_s = [a,b,c,d,e,f]
+    u1 = GF2_Vec([0,0,1,0,0,1,0])
+    u2 = GF2_Vec([0,1,0,0,0,1,0])
+    
+    u1.revel()
+    
+
+problem4()
 
 

@@ -297,3 +297,30 @@ class Vec:
 
     def __iter__(self):
         raise TypeError('%r object is not iterable' % self.__class__.__name__)
+
+
+def gf2_add(u,v):
+    assert isinstance(u, GF2_Vec)
+    assert isinstance(v, GF2_Vec)
+    new_list = [x ^ y for (x,y) in zip(u.bits(),v.bits())]
+    return new_list
+
+def gf2_equal(u,v):
+    assert isinstance(u, GF2_Vec)
+    assert isinstance(v, GF2_Vec)
+    return u.bits() == v.bits()
+
+class GF2_Vec:
+    """
+    GF2_Vector 
+    bit stream vector, assuming vectors are with same length
+    """
+    def __init__(self, bitStream):
+        assert isinstance(bitStream, list)
+        self.bitStream = bitStream
+
+    def bits(self):
+        return self.bitStream
+    
+    __add__ = gf2_add
+    __eq__ = gf2_equal

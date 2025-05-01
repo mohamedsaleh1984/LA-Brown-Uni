@@ -1,5 +1,5 @@
 # Copyright 2013 Philip N. Klein
-
+from typing import cast
 def getitem(v,k):
     """
     Return the value of entry k in v.
@@ -322,21 +322,25 @@ class GF2_Vec:
     def bits(self):
         return self.bitStream
     
-    # def sumOfBitStreams(self, vectors):
-    #     assert isinstance(vectors, list)
-    #     assert isinstance(vectors[0], GF2_Vec)
-    #     # vector length
-    #     vec_len = len(vectors[0].bits())
-    #     # generate result vector 
-    #     zero_list = [0 for i in vec_len]
-    #     result  = GF2_Vec(zero_list)
-
-    #     for i in len(vec_len):
-    #         result =  result + vectors[i]
-    #     return result
+    def sumOfBitStreams(self, vectors):
+        assert isinstance(vectors, list)
+        assert isinstance(vectors[0], GF2_Vec)
+        # vector length
+        result:GF2_Vec = GF2_Vec([0] * len(vectors[0].bits()))
+        # length
+        l = len(vectors)
+        # TODO: Fix
+        for i in range(l):
+            exp_cast:GF2_Vec = cast(GF2_Vec,vectors[i])
+            result =  result + exp_cast
+        return result
         
     def revel(self):
         print(self.bitStream)
     
+    def __str__(self):
+        s1 = ''.join(self.bits())
+        return s1
+
     __add__ = gf2_add
     __eq__ = gf2_equal

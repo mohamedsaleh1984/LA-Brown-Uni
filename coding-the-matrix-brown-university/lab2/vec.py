@@ -13,7 +13,6 @@ def getitem(v,k):
     """
     # assert k in v.D
     return v.f[k] if k in v.f else 0
-    
 
 def setitem(v,k,val):
     """
@@ -69,8 +68,21 @@ def equal(u,v):
     >>> Vec({'a','b'},{'a':1}) == Vec({'a','b'},{'a':2})
     False
     """
-    assert u.D == v.D
-    pass
+    # check same domain set
+    same_domain = set(u.D) == set(v.D)
+    if same_domain:
+        # check the same keys 
+        if u.f.keys() == v.f.keys():
+            # check the keys values 
+            for k in u.f:
+                if u.f[k] != v.f[k]:
+                    return False
+            return True
+        elif u.f.keys() != v.f.keys():
+            return False
+        else:
+            return False
+    return False
 
 def add(u,v):
     """
@@ -106,8 +118,25 @@ def add(u,v):
     >>> b + Vec({'a','e','i','o','u'}, {}) == b
     True
     """
-    assert u.D == v.D
-    pass
+    domain = set(u.D | v.D)
+    result = {}
+    # copy from u to result vector
+    for k in u.f.keys():
+        result[k] = u.f[k]
+    # print('u.f ', result)
+    for key in v.f.keys():
+        # print(f'current key {key}')
+        # print('changes ', result)
+
+        if key in u.f:
+            result[key] = v.f[key] + u.f[key]
+            # addition
+            # print(f'addition {v.f[key]}+{u.f[key]}={result[key]}' )
+        else:
+            result[key] = v.f[key]
+            # print(f'inserted {key} => {result[key]}' )
+            
+    return Vec(domain,result)
 
 def dot(u,v):
     """
@@ -140,8 +169,11 @@ def dot(u,v):
     >>> v1 * v2
     12
     """
-    assert u.D == v.D
-    pass
+    dot = 0
+    for k in u.f.keys():
+        if k in v.f.keys():
+            dot = dot + (u.f[k]*v.f[k])
+    return dot
 
 def scalar_mul(v, alpha):
     """
@@ -161,9 +193,11 @@ def scalar_mul(v, alpha):
     >>> u == Vec({'x','y','z','w'},{'x':1,'y':2,'z':3,'w':4})
     True
     """
-    pass
+    if alpha == 0:
+        return Vec(v.D,{})
+    negated_f = {k: alpha*v[k] for k in v.f}
+    return Vec(v.D, negated_f)
     
-
 def neg(v):
     """
     Returns the negation of a vector.
@@ -179,7 +213,9 @@ def neg(v):
     >>> -Vec({'a','b','c'}, {'a':1}) == Vec({'a','b','c'}, {'a':-1})
     True
     """
-    pass
+    #print("========================================")
+    negated_f = {k: -v[k] for k in v.f}
+    return Vec(v.D, negated_f)
 
 ###############################################################################################################################
 

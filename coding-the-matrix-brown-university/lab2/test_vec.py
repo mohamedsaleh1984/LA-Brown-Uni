@@ -2,6 +2,26 @@
 
 >>> from vec import Vec
 
+
+------- For add(u, v):
+
+Returns the sum of the two vectors.
+Be sure to add together values for all keys from u.f and v.f even if some keys in u.f do not exist in v.f (or vice versa)
+
+>>> a = Vec({'a','e','i','o','u'}, {'a':0,'e':1,'i':2})
+>>> b = Vec({'a','e','i','o','u'}, {'o':4,'u':7})
+>>> c = Vec({'a','e','i','o','u'}, {'a':0,'e':1,'i':2,'o':4,'u':7})
+>>> a + b == c
+True
+>>> d = Vec({'x','y','z'}, {'x':2,'y':1})
+>>> e = Vec({'x','y','z'}, {'z':4,'y':-1})
+>>> f = Vec({'x','y','z'}, {'x':2,'y':0,'z':4})
+>>> d + e == f
+True
+>>> b + Vec({'a','e','i','o','u'}, {}) == b
+True
+
+
 ------- For getitem(v,d):
 
 Return the value of entry d in v.
@@ -52,23 +72,7 @@ The values matter:
 >>> Vec({'a','b'},{'a':1}) == Vec({'a','b'},{'a':2})
 False
 
-------- For add(u, v):
 
-Returns the sum of the two vectors.
-Be sure to add together values for all keys from u.f and v.f even if some keys in u.f do not exist in v.f (or vice versa)
-
->>> a = Vec({'a','e','i','o','u'}, {'a':0,'e':1,'i':2})
->>> b = Vec({'a','e','i','o','u'}, {'o':4,'u':7})
->>> c = Vec({'a','e','i','o','u'}, {'a':0,'e':1,'i':2,'o':4,'u':7})
->>> a + b == c
-True
->>> d = Vec({'x','y','z'}, {'x':2,'y':1})
->>> e = Vec({'x','y','z'}, {'z':4,'y':-1})
->>> f = Vec({'x','y','z'}, {'x':2,'y':0,'z':4})
->>> d + e == f
-True
->>> b + Vec({'a','e','i','o','u'}, {}) == b
-True
 
 ------- For dot(u, v):
 

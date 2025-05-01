@@ -1,3 +1,0 @@
-echo Testing, Testing alo alo....
-echo 1 2 3 4
-python3 -m doctest test_vec.py

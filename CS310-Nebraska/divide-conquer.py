@@ -107,11 +107,16 @@ res = compute_a_pow_n_mod_m(a,n,m)
 print(f"{a}^{n} mod {m} compute_a_pow_n_mod_m = {res}")
 
 
+def simpleEuclid(a,b):
+    while b != 0:
+        t = b
+        b = a % t
+        a = t
+    return a
 
 
 
-
-
+print(f'simpleEuclid (1768,184) => {simpleEuclid(1768,184)}')
 
 
 

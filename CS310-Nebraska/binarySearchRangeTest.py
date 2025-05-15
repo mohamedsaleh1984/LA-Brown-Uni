@@ -1,5 +1,4 @@
 import unittest
-
 from binarySearchRange import binarySearchRange
 
 class BinSearchRangeUnitTest(unittest.TestCase):

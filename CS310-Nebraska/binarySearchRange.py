@@ -57,10 +57,10 @@ def processBinarySearchRange(arr, lower,upper):
 	sub = arr[i:j]
 	print(sub)
 	
-arr = [1,1,1,1,1,1,1,1,2,3,4,5,6,7,8,9,9,9,9]
-processBinarySearchRange(arr,2.5,8.5) 		# should return (9,15)
-processBinarySearchRange(arr,1,8) 			# should return (0,15)
-processBinarySearchRange(arr,1,1) 			# should return (0,8)
-processBinarySearchRange(arr,-10,-5) 		# should return (0,0)
-processBinarySearchRange(arr,10,50) 		# should return (19,19)
+# arr = [1,1,1,1,1,1,1,1,2,3,4,5,6,7,8,9,9,9,9]
+# processBinarySearchRange(arr,2.5,8.5) 		# should return (9,15)
+# processBinarySearchRange(arr,1,8) 			# should return (0,15)
+# processBinarySearchRange(arr,1,1) 			# should return (0,8)
+# processBinarySearchRange(arr,-10,-5) 		# should return (0,0)
+# processBinarySearchRange(arr,10,50) 		# should return (19,19)
 
